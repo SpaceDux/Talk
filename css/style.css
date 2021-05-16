@@ -42,6 +42,8 @@ body {
   cursor: pointer;
 }
 .talkyPart {
+  background-color: #383c4a;
+  border: #404552 solid 1px;
   height: auto;
   width: 100%;
   padding: 5px;
@@ -51,9 +53,10 @@ body {
 }
 .talkyBoxInput {
   width: 100%;
+  border:none;
   box-sizing: border-box;
-  background-color: #404552;
-  border: none;
+  background-color: #383c4a;
+  
   border-radius: 5px;
   display: block;
   font-size: 18px;
@@ -127,13 +130,46 @@ hr {
   color: #fff;
 }
 
-button.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
+button {
+  background-color: #383c4a; /* Green */
+  border: #5294e2 solid 1px;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.get-away {
+  padding-left: 10px;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #404552;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #404552;
+  color: #fff;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #5294e2;
+  color: white;
 }
