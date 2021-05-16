@@ -11,6 +11,9 @@ body {
   overflow-x: hidden;
   padding: 5px;
   display: block;
+
+  /* to hide the scrollbar in FF */
+  scrollbar-width: none;
 }
 .MessageHolder::-webkit-scrollbar {
   display: none;
