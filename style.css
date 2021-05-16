@@ -1,0 +1,65 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #383c4a;
+}
+.MessageHolder {
+  width: auto;
+  height: 90vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 5px;
+  display: block;
+}
+.MessageHolder::-webkit-scrollbar {
+  display: none;
+}
+.MessageBox {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background: #4b5162;
+  color: #fff;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.MessageBox .Author {
+  width: 100%;
+  float: left;
+  color: #5294e2;
+  display: block;
+}
+.MessageBox:hover {
+  background: #7c818c;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+.TalkyPart {
+  height: auto;
+  width: 100%;
+  padding: 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: block;
+}
+.TalkyBox_Input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #404552;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+  resize: none;
+}
+
+/* Voice channels */
+.VoiceChannels {
+  width: 100%;
+  padding: 5px;
+}
