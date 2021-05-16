@@ -36,6 +36,10 @@ let thisclass = {
 
     let elem = document.querySelector('.messageHolder');
     elem.innerHTML = html;
+
+    var anchor = document.querySelector('.messageHolder');
+    anchor.scrollTop = anchor.scrollHeight - anchor.clientHeight;
+
   }
 }
 
