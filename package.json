@@ -6,6 +6,10 @@
   "scripts": {
     "start": "electron ."
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SpaceDux/Talk.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
