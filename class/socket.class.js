@@ -7,6 +7,13 @@ let thisclass = {
     conn.on("connect", () => {
       console.log("Connection Established");
     });
+
+
+    conn.emit('Message-Send', {"Message":"Hello world."});
+
+    conn.on('Message-UpdateFeed', (data) => {
+      console.log(data);
+    })
   }
 }
 
