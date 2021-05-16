@@ -1,4 +1,6 @@
 const io = require('socket.io-client');
+let conn;
+var msgArray = [];
 
 let thisclass = {
   Init: function() {
@@ -8,12 +10,32 @@ let thisclass = {
       console.log("Connection Established");
     });
 
-
-    conn.emit('Message-Send', {"Message":"Hello world."});
-
-    conn.on('Message-UpdateFeed', (data) => {
-      console.log(data);
+    conn.on('Message-Received', (data) => {
+      console.log(data)
+      msgArray.push(data);
+      thisclass.SortAndPrintMessages(msgArray);
     })
+  },
+  SendMessage: function(message, author, channel) {
+    return new Promise(function(resolve, reject) {
+      conn.emit("Message-Send", {"message":message, "author":author, "channel":channel});
+      resolve();
+    });
+  },
+  SortAndPrintMessages: function(array) {
+    let html = '';
+    array.forEach((row) => {
+      html += `<div class="messageBox">
+                  <div class="author">
+                    ${row.author}
+                    <i class="fas fa-crown get-away"></i>
+                  </div>
+                  ${row.message}
+                </div>`;
+    })
+
+    let elem = document.querySelector('.messageHolder');
+    elem.innerHTML = html;
   }
 }
 
