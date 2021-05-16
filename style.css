@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   background: #383c4a;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .MessageHolder {
   width: auto;
@@ -66,3 +67,63 @@ body {
   width: 100%;
   padding: 5px;
 }
+.Channel {
+  min-height:150px;
+  width: 100%;
+  height: auto;
+
+  padding: 10px;
+  background: #4b5162;
+  color: #fff;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.Channel:nth-child(1) {
+  border: 1px #5294e2 solid;
+}
+.Channel:nth-child(2) {
+  border: 1px #BCED91 solid;
+ }
+.Channel:nth-child(3) {
+  border: 1px #FF6666 solid;
+ }
+ .Channel:nth-child(4) {
+  border: 1px #F3E88E solid;
+ }
+
+ .channelPeople{
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+ }
+ .circle {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: rotate(45deg);
+}
+.circle:nth-child(1){
+  background: #5294e2;
+}
+.circle:nth-child(2){
+  background: #BCED91;
+}
+.circle:nth-child(3){
+  background: #FF6666;
+}
+.circle:nth-child(4){
+  background: #F3E88E;
+}
+.circle:nth-child(5){
+  background: #9A32CD;
+}
+hr {
+  color: #fff;
+}
+
