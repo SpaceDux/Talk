@@ -30,15 +30,11 @@
     <h1>Login</h1>
     <p>Talk accounts are not centralised, you will only login to this server.</p>
 
-    <form action="actionforsubmittinglogin">
-      <label for="email">Email:</label><br>
-      <input type="text" id="email" name="email" value="noisyisthebest@3264.uk"><br>
-
-      <label for="email">Password:</label><br>
-      <input type="password" id="password" name="password" value="hunter2"><br>
-
-      <input type="submit" value="Submit">
-    </form> 
+        <form class="" onsubmit="LoginUser()">
+          <input id="username" type="text" name="username" value="" placeholder="noisy">
+          <input id="password" type="password" name="password" value="" placeholder="hunter2">
+          <input type="submit" value="Login">
+        </form>
   </div>
 
 
@@ -68,6 +64,12 @@
           document.querySelector('#messageInput').value = '';
         }
     });
+    </script>
+
+    <script>
+      const { dialog } = require('electron')
+      console.log(dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] }))
+
     </script>
   </body>
 </html>
