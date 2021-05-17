@@ -69,6 +69,11 @@ body {
   border:none;
 }
 
+.talk {
+   position: fixed;
+   bottom: 0px;
+}
+
 .textarea:focus-visible {
   border: none;
 }
