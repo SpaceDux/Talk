@@ -128,7 +128,7 @@
           if (e.key === 'Enter' && e.shiftKey == false) {
             let val = document.querySelector('#messageInput').value;
             if(val !== '' && val !== ' ' && val !== '\n') {
-              messaging_class.SendMessage(val, "SpaceDux", 1)
+              messaging_class.SendMessage(val, 1)
               .then(() => {
                 document.querySelector('#messageInput').value = '';
 

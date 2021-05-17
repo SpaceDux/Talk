@@ -17,9 +17,9 @@ let thisclass = {
     })
   },
   // Messaging
-  SendMessage: function(message, author, channel) {
+  SendMessage: function(message, channel) {
     return new Promise(function(resolve, reject) {
-      conn.emit("Message-Send", {"message":message, "author":author, "channel":channel});
+      conn.emit("Message-Send", {"Token":config.Token, "message":message, "channel":channel});
       resolve();
     });
   },
