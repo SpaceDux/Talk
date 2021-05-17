@@ -69,6 +69,11 @@ body {
   border:none;
 }
 
+.talk {
+   position: fixed;
+   bottom: 0px;
+}
+
 .textarea:focus-visible {
   border: none;
 }
@@ -192,4 +197,51 @@ textarea {
     box-shadow: none;
 
     resize: none; /*remove the resize handle on the bottom right*/
+}
+
+h1 {
+  color: #fff;
+}
+p {
+  color: #fff;
+}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #5294e2;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit]:hover {
+  background-color: #5294e2;
+}
+
+label {
+  color: #fff;
 }
