@@ -51,25 +51,30 @@
 
     <script src="./loader.js"></script>
     <script type="text/javascript">
-    document.querySelector('#messageInput').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter' && e.shiftKey == false) {
-          let val = document.querySelector('#messageInput').value;
-          if(val !== '' && val !== ' ' && val !== '\n') {
-            messaging_class.SendMessage(val, "SpaceDux", 1)
-            .then(() => {
-              document.querySelector('#messageInput').value = '';
-              
-            })
+      document.querySelector('#messageInput').addEventListener('keypress', function (e) {
+          if (e.key === 'Enter' && e.shiftKey == false) {
+            let val = document.querySelector('#messageInput').value;
+            if(val !== '' && val !== ' ' && val !== '\n') {
+              messaging_class.SendMessage(val, "SpaceDux", 1)
+              .then(() => {
+                document.querySelector('#messageInput').value = '';
+
+              })
+            }
+            document.querySelector('#messageInput').value = '';
           }
-          document.querySelector('#messageInput').value = '';
-        }
-    });
-    </script>
+      });
 
-    <script>
-      const { dialog } = require('electron')
-      console.log(dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] }))
+      function LoginUser() {
+        event.preventDefault();
+        let username = document.querySelector('#username').value;
+        let password = document.querySelector('#password').value;
 
+        users_class.Login(username, password)
+        .then((result) => {
+          alert(result.Message);
+        })
+      }
     </script>
   </body>
 </html>
