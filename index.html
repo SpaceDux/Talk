@@ -21,6 +21,15 @@
     </div>
 
 
+    <div class="row">
+      <div class="col-12">
+        <form class="" onsubmit="LoginUser()">
+          <input id="username" type="text" name="username" value="">
+          <input id="password" type="password" name="password" value="">
+          <input type="submit" value="Login">
+        </form>
+      </div>
+    </div>
 
     <div class="row talk">
       <div class="col-8">
@@ -111,19 +120,30 @@
     </div>
     <script src="./loader.js"></script>
     <script type="text/javascript">
-    document.querySelector('#messageInput').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter' && e.shiftKey == false) {
-          let val = document.querySelector('#messageInput').value;
-          if(val !== '' && val !== ' ' && val !== '\n') {
-            messaging_class.SendMessage(val, "SpaceDux", 1)
-            .then(() => {
-              document.querySelector('#messageInput').value = '';
-              
-            })
+      document.querySelector('#messageInput').addEventListener('keypress', function (e) {
+          if (e.key === 'Enter' && e.shiftKey == false) {
+            let val = document.querySelector('#messageInput').value;
+            if(val !== '' && val !== ' ' && val !== '\n') {
+              messaging_class.SendMessage(val, "SpaceDux", 1)
+              .then(() => {
+                document.querySelector('#messageInput').value = '';
+
+              })
+            }
+            document.querySelector('#messageInput').value = '';
           }
-          document.querySelector('#messageInput').value = '';
-        }
-    });
+      });
+
+      function LoginUser() {
+        event.preventDefault();
+        let username = document.querySelector('#username').value;
+        let password = document.querySelector('#password').value;
+
+        users_class.Login(username, password)
+        .then((result) => {
+          alert(result.Message);
+        })
+      }
     </script>
   </body>
 </html>

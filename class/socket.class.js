@@ -16,6 +16,7 @@ let thisclass = {
       thisclass.SortAndPrintMessages(msgArray);
     })
   },
+  // Messaging
   SendMessage: function(message, author, channel) {
     return new Promise(function(resolve, reject) {
       conn.emit("Message-Send", {"message":message, "author":author, "channel":channel});
@@ -40,6 +41,25 @@ let thisclass = {
     var anchor = document.querySelector('.messageHolder');
     anchor.scrollTop = anchor.scrollHeight - anchor.clientHeight;
 
+  },
+  // Users
+  User_Login: function(user, pass) {
+    return new Promise(function(resolve, reject) {
+      conn.emit("User-Authenticate", {"username":user, "password":pass});
+
+      conn.on("User-Authenticate_Reply", (data) => {
+        resolve(data);
+      })
+    });
+  },
+  User_CheckToken: function(token) {
+    return new Promise(function(resolve, reject) {
+      conn.emit("User-CheckToken", {"Token":token});
+
+      conn.on("User-CheckToken_Reply", (data) => {
+        resolve(data);
+      })
+    });
   }
 }
 
